@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Teachers</title>
+</head>
+<body>
+    <h1>Teachers</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone No</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for teacher in data %}
+        <tr>
+            <td>{{ teacher.loginid }}</td>
+            <td>{{ teacher.name }}</td>
+            <td>{{ teacher.email }}</td>
+            <td>{{ teacher.phoneno }}</td>
+            <td>{{ teacher.status }}</td>
+            <td><a href="/approveteacher/{{ teacher.loginid }}">Approve</a></td>
+            <td><a href="/editteacher/{{teacher.loginid}}">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+
+

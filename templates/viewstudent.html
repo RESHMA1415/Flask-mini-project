@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Students</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone No</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for student in data %}
+        <tr>
+            <td>{{ student.loginid }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.phoneno }}</td>
+            <td>{{ student.status }}</td>
+            <td><a href="/approvestudent/{{ student.loginid }}">Approve</a></td>
+            <td><a href="/editstudent/{{ student.loginid}}">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+ 
+
+
+
